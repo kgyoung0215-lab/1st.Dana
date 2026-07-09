@@ -1,0 +1,263 @@
+const CONFIG = {
+
+    /* ==========================
+       기본 정보
+    ========================== */
+
+    title: "다나의 첫 번째 생일",
+
+    childName: "다나",
+
+    englishName: "Dana",
+
+    subtitle: "First Birthday",
+
+    quote: "Every day with you has been our greatest gift.",
+
+
+    /* ==========================
+       행사 정보
+    ========================== */
+
+    eventDate: "2026-08-09 11:00:00",
+
+    dateText: "2026년 8월 9일 (일)",
+
+    timeText: "오전 11시 00분",
+
+    hall: "리누아 GIDC C동 12층",
+
+    address: "경기도 광명시 일직로 43 C동 12층 1201호",
+    parking: "주차 3시간 무료",
+
+
+    /* ==========================
+       연락처
+    ========================== */
+
+    father: {
+
+        name: "김근영",
+
+        phone: "01030474123"
+
+    },
+
+    mother: {
+
+        name: "김정화",
+
+        phone: "01093102231"
+
+    },
+
+
+    /* ==========================
+       초대글
+    ========================== */
+
+    invitation:
+
+`안녕하세요.
+
+저희 가족에게 가장 소중한 선물인
+다나가 어느덧 첫 번째 생일을 맞이했습니다.
+
+웃고,
+울고,
+사랑하며 함께한 지난 1년.
+
+그 소중한 하루를
+함께해주시면 감사하겠습니다.`,
+
+
+
+    /* ==========================
+       Story
+    ========================== */
+
+    story:
+
+`처음 뒤집던 날.
+
+처음 웃던 날.
+
+처음 걸음을 떼던 날.
+
+모든 순간이
+우리 가족에게는
+선물이었습니다.`,
+
+
+
+    /* ==========================
+       갤러리
+    ========================== */
+
+    gallery:[
+
+        
+        "assets/images/dana.jpg",
+
+        "assets/images/main.jpg",
+
+        "assets/images/main.jpg",
+
+        "assets/images/main.jpg",
+
+        "assets/images/main.jpg",
+
+        "assets/images/main.jpg",
+
+        "assets/images/main.jpg"
+
+    ],
+
+
+
+    /* ==========================
+       지도
+    ========================== */
+
+    map:{
+
+        lat:37.5665,
+
+        lng:126.9780
+
+    },
+
+
+
+    /* ==========================
+       길찾기
+    ========================== */
+
+    navigation:{
+
+        kakao:"",
+
+        naver:"",
+
+        tmap:""
+
+    },
+
+
+
+    /* ==========================
+       SNS 공유
+    ========================== */
+
+    share:{
+
+        title:"다나의 첫 번째 생일",
+
+        description:"소중한 날 함께해주세요.",
+
+        image:"assets/images/dana.jpg"
+
+    },
+
+
+
+    /* ==========================
+       음악
+    ========================== */
+
+    music:{
+
+        use:false,
+
+        file:"music/bgm.mp3"
+
+    },
+
+
+
+    /* ==========================
+       참석 여부
+    ========================== */
+
+    rsvp:{
+
+        use:true,
+
+        googleForm:""
+
+    },
+
+
+
+    /* ==========================
+       계좌 (기본 OFF)
+    ========================== */
+
+    account:{
+
+        use:false,
+
+        kakaoPay:"",
+
+        bank:"",
+
+        number:"",
+
+        holder:""
+
+    },
+
+    timeline:[
+
+    {
+        date:"2025.08.15",
+        title:"태어난 날 👶",
+        image:"assets/images/dana.jpg",
+        description:"우리 가족에게 가장 큰 선물이 찾아왔어요."
+    },
+
+    {
+        date:"2025.11.18",
+        title:"처음 뒤집었어요 🤍",
+        image:"assets/images/dana.jpg",
+        description:"혼자 뒤집기에 성공했어요."
+    },
+
+    {
+        date:"2026.01.05",
+        title:"배밀이를 시작했어요 🐣",
+        image:"assets/images/dana.jpg",
+        description:"세상을 탐험하기 시작했어요."
+    },
+
+    {
+        date:"2026.02.10",
+        title:"엄마를 말했어요 💕",
+        image:"assets/images/dana.jpg",
+        description:"처음 '엄마'를 불렀어요."
+    },
+
+    {
+        date:"2026.03.20",
+        title:"아빠를 말했어요 🥹",
+        image:"assets/images/dana.jpg",
+        description:"아빠가 제일 행복했던 날."
+    },
+
+    {
+        date:"2026.04.01",
+        title:"첫 걸음을 떼었어요 👣",
+        image:"assets/images/dana.jpg",
+        description:"비틀비틀 한 걸음!"
+    },
+
+    {
+        date:"2026.08.09",
+        title:"첫 번째 생일 🎂",
+        image:"assets/images/dana.jpg",
+        description:"그리고 오늘."
+    }
+
+]
+
+};

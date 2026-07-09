@@ -1,24 +1,268 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>다나 성장기</title>
 
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
+    <title>다나 돌잔치</title>
 
-        <header class="hero">
-        <img src="images/main.jpg" alt="다나">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=MaruBuri:wght@400;700&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-        <div class="overlay">
-            <p>첫 번째 생일</p>
-            <h1>다나 돌잔치</h1>
-            <p>소중한 날 함께해주세요</p>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Hero -->
+
+    <section class="hero">
+
+        <img src="assets/images/dana.jpg" class="hero-image">
+
+        <div class="hero-text">
+
+            <span class="small-title">
+                First Birthday
+            </span>
+
+            <h1 id="childName"></h1>
+
+            <p id="dateText" class="date"></p>
+
+            <div id="countdown"></div>
+
+            <p id="quote" class="quote"></p>
+
         </div>
-    </header>
 
-    <script src="script.js"></script>
+        <div class="scroll">
+
+            ↓
+
+        </div>
+
+    </section>
+
+
+
+    <!-- invitation -->
+
+    <section class="card">
+
+        <h2>
+            Invitation
+        </h2>
+
+        <p id="invitationText"></p>
+
+    </section>
+
+
+
+    <!-- story -->
+
+    <section class="story">
+
+        <img src="assets/images/dana.jpg">
+
+        <div class="story-text">
+
+            <h3>
+
+                Every Moment
+                was a Gift.
+
+            </h3>
+
+            <p id="storyText"></p>
+
+        </div>
+
+    </section>
+
+    <!-- Timeline -->
+
+ <section class="timeline-section">
+
+    <h2>다나의 첫 번째 이야기</h2>
+
+    <div id="timeline"></div>
+
+</section>
+
+
+
+    <!-- schedule -->
+
+    <section class="card">
+
+        <h2>
+
+            행사 안내
+
+        </h2>
+
+        <div class="info">
+
+            <div>
+
+                <span>📅</span>
+
+                <strong id="scheduleDate"></strong>
+
+            </div>
+
+            <div>
+
+                <span>🕚</span>
+
+                <strong id="scheduleTime"></strong>
+
+            </div>
+
+            <div>
+
+                <span>📍</span>
+
+                <strong id="scheduleHall"></strong>
+
+            </div>
+
+        </div>
+
+        <button class="main-button">
+
+            캘린더 추가
+
+        </button>
+
+    </section>
+
+
+
+    <!-- map -->
+
+    <section class="card">
+
+        <h2>
+
+            오시는 길
+
+        </h2>
+
+        <div class="map">
+
+            지도 들어갈 자리
+
+        </div>
+
+        <div class="button-group">
+
+            <button>
+
+                카카오맵
+
+            </button>
+
+            <button>
+
+                네이버
+
+            </button>
+
+            <button>
+
+                티맵
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- gallery -->
+
+    <section class="gallery">
+
+        <h2>
+
+            Gallery
+
+        </h2>
+
+        <div class="grid" id="gallery"></div>
+
+    </section>
+
+
+
+    <!-- RSVP -->
+
+    <section class="card">
+
+        <h2>
+
+            참석 여부
+
+        </h2>
+
+        <input
+            type="text"
+            placeholder="성함">
+
+        <select>
+
+            <option>
+
+                참석합니다
+
+            </option>
+
+            <option>
+
+                참석이 어렵습니다
+
+            </option>
+
+        </select>
+
+        <input
+            type="number"
+            placeholder="참석 인원">
+
+        <button class="main-button">
+
+            참석하기
+
+        </button>
+
+    </section>
+
+
+
+    <footer>
+
+        Thank you<br>
+
+        ♡<br><br>
+
+        Dana's First Story
+
+    </footer>
+
+</div>
+
+<script src="config.js"></script>
+
+<script src="script.js"></script>
+
 </body>
-</html> 
+
+</html>
