@@ -690,22 +690,22 @@ function openTMap() {
     // 앱 실행 시도
     window.location.href = scheme;
 
-    // 앱이 없으면 스토어 이동
-    setTimeout(() => {
+    // // 앱이 없으면 스토어 이동
+    // setTimeout(() => {
 
-        if (isAndroid) {
+    //     if (isAndroid) {
 
-            window.location.href =
-                "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
+    //         window.location.href =
+    //             "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
 
-        } else {
+    //     } else {
 
-            window.location.href =
-                "https://apps.apple.com/kr/app/tmap/id431589174";
+    //         window.location.href =
+    //             "https://apps.apple.com/kr/app/tmap/id431589174";
 
-        }
+    //     }
 
-    }, 1200);
+    // }, 3000);
 
 }
 
