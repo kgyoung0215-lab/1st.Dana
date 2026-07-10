@@ -787,7 +787,7 @@ function openGoogleCalendar() {
         "경기도 광명시 일직로 43 리뉴아 GIDC C동 12층"
     );
 
-    const url =
+    const intentUrl =
         "intent://calendar.google.com/calendar/render" +
         "?action=TEMPLATE" +
         "&text=" + title +
