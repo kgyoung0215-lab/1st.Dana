@@ -760,15 +760,13 @@ function saveCalendar() {
     const isIOS = /iphone|ipad|ipod/.test(ua);
     const isAndroid = /android/.test(ua);
 
-     downloadICS();
-
     if (isAndroid) {
 
         openGoogleCalendar();
 
     } else {
 
-       
+        downloadICS();
 
     }
 
@@ -776,8 +774,8 @@ function saveCalendar() {
 
 function openGoogleCalendar() {
 
-    const start = "20260815T030000Z";
-    const end = "20260815T060000Z";
+    const start = "20260809T030000Z";
+    const end = "20260809T060000Z";
 
     const title = encodeURIComponent("다나 첫 돌잔치");
 
@@ -790,13 +788,18 @@ function openGoogleCalendar() {
     );
 
     const url =
-        `https://calendar.google.com/calendar/render?action=TEMPLATE` +
-        `&text=${title}` +
-        `&dates=${start}/${end}` +
-        `&details=${details}` +
-        `&location=${location}`;
+        "intent://calendar.google.com/calendar/render" +
+        "?action=TEMPLATE" +
+        "&text=" + title +
+        "&dates=" + start + "/" + end +
+        "&details=" + details +
+        "&location=" + location +
+        "#Intent;" +
+        "scheme=https;" +
+        "package=com.google.android.calendar;" +
+        "end";
 
-    window.open(url, "_blank");
+    location.href = intentUrl;
 
 }
 
