@@ -690,22 +690,22 @@ function openTMap() {
     // 앱 실행 시도
     window.location.href = scheme;
 
-    // // 앱이 없으면 스토어 이동
-    // setTimeout(() => {
+    // 앱이 없으면 스토어 이동
+    setTimeout(() => {
 
-    //     if (isAndroid) {
+        if (isAndroid) {
 
-    //         window.location.href =
-    //             "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
+            window.location.href =
+                "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
 
-    //     } else {
+        } else {
 
-    //         window.location.href =
-    //             "https://apps.apple.com/kr/app/tmap/id431589174";
+            window.location.href =
+                "https://apps.apple.com/kr/app/tmap/id431589174";
 
-    //     }
+        }
 
-    // }, 3000);
+    }, 1200);
 
 }
 
@@ -774,8 +774,8 @@ function saveCalendar() {
 
 function openGoogleCalendar() {
 
-    const start = "20260809T030000Z";
-    const end = "20260809T060000Z";
+    const start = "20260809T020000Z";
+    const end = "20260809T050000Z";
 
     const title = encodeURIComponent("다나 첫 돌잔치");
 
@@ -787,19 +787,14 @@ function openGoogleCalendar() {
         "경기도 광명시 일직로 43 리뉴아 GIDC C동 12층"
     );
 
-    const intentUrl =
-        "intent://calendar.google.com/calendar/render" +
-        "?action=TEMPLATE" +
-        "&text=" + title +
-        "&dates=" + start + "/" + end +
-        "&details=" + details +
-        "&location=" + location +
-        "#Intent;" +
-        "scheme=https;" +
-        "package=com.google.android.calendar;" +
-        "end";
+    const url =
+        `https://calendar.google.com/calendar/render?action=TEMPLATE` +
+        `&text=${title}` +
+        `&dates=${start}/${end}` +
+        `&details=${details}` +
+        `&location=${location}`;
 
-    location.href = intentUrl;
+    window.open(url, "_blank");
 
 }
 
@@ -810,8 +805,8 @@ function downloadICS() {
 VERSION:2.0
 BEGIN:VEVENT
 SUMMARY:다나 첫 돌잔치
-DTSTART:20260815T030000Z
-DTEND:20260815T060000Z
+DTSTART:20260809T020000Z
+DTEND:20260809T050000Z
 LOCATION:경기도 광명시 일직로 43
 DESCRIPTION:다나의 첫 번째 생일에 초대합니다.
 END:VEVENT
