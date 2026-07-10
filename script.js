@@ -1,6 +1,13 @@
+let currentIndex = 0;
+let touchStartX = 0;
+let touchEndX = 0;
+let musicPlaying = false;
+
 document.addEventListener("DOMContentLoaded", () => {
 
     bindConfig();
+
+    makeTimeline();
 
     makeGallery();
 
@@ -12,8 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initButtons();
 
-    makeTimeline();
+    initProgressBar();
 
+    initViewer();
+
+    initMusic();
+
+    initKakao();
+
+    bindLocation();
+
+    initMap();
+
+    initNavigation();
 });
 
 
@@ -99,21 +117,21 @@ function updateCountdown(){
 
 function makeGallery(){
 
-    const gallery=document.getElementById("gallery");
+    const gallery = document.getElementById("gallery");
 
-    if(!gallery)return;
+    if(!gallery) return;
 
-    gallery.innerHTML="";
+    gallery.innerHTML = "";
 
-    CONFIG.gallery.forEach(src=>{
+    CONFIG.gallery.forEach((item, index) => {
 
-        const img=document.createElement("img");
+        const img = document.createElement("img");
 
-        img.src=src;
+        img.src = item.image;
 
-        img.loading="lazy";
+        img.loading = "lazy";
 
-        img.onclick=()=>openViewer(src);
+        img.onclick = () => openViewer(index);
 
         gallery.appendChild(img);
 
@@ -181,33 +199,54 @@ function initButtons(){
    IMAGE VIEWER
 =========================================== */
 
-function openViewer(src){
+function openViewer(index){
 
-    let viewer=document.getElementById("viewer");
+    currentIndex=index;
 
-    if(!viewer){
+    updateViewer();
 
-        viewer=document.createElement("div");
+    document
+        .getElementById("viewer")
+        .classList.add("active");
 
-        viewer.id="viewer";
+}
 
-        viewer.innerHTML=`
+function updateViewer(){
 
-        <div class="viewer-bg"></div>
+    const item = CONFIG.gallery[currentIndex];
 
-        <img>
+    const img = document.getElementById("viewerImage");
 
-        `;
+    const title = document.getElementById("viewerTitle");
 
-        document.body.appendChild(viewer);
+    const date = document.getElementById("viewerDate");
 
-        viewer.onclick=()=>viewer.remove();
+    const desc = document.getElementById("viewerDesc");
 
-    }
+    const count = document.getElementById("viewerCount");
 
-    viewer.querySelector("img").src=src;
+    // 페이드 아웃
+    img.style.opacity = 0;
 
-    
+    setTimeout(() => {
+
+        img.src = item.image;
+
+        title.textContent = item.title || "";
+
+        date.textContent = item.date || "";
+
+        desc.textContent = item.description || "";
+
+        count.textContent = `${currentIndex + 1} / ${CONFIG.gallery.length}`;
+
+        // 이미지 로딩 후 페이드 인
+        img.onload = () => {
+            img.style.opacity = 1;
+        };
+
+    }, 120);
+
 }
 
 function makeTimeline(){
@@ -247,5 +286,490 @@ function makeTimeline(){
 
     });
     fadeAnimation();
+
+}
+
+/* ===========================================
+   Progress Bar
+=========================================== */
+
+function initProgressBar(){
+
+    const bar=document.getElementById("progressBar");
+
+    window.addEventListener("scroll",()=>{
+
+        const scrollTop=window.scrollY;
+
+        const height=document.documentElement.scrollHeight-window.innerHeight;
+
+        const percent=(scrollTop/height)*100;
+
+        bar.style.width=percent+"%";
+
+    });
+
+}
+
+function initViewer(){
+
+    document.getElementById("closeBtn").onclick=closeViewer;
+
+    document.querySelector(".viewer-bg").onclick=closeViewer;
+
+    document.getElementById("prevBtn").onclick=prevImage;
+
+    document.getElementById("nextBtn").onclick=nextImage;
+
+    document.addEventListener("keydown",(e)=>{
+
+        if(e.key==="Escape"){
+
+            closeViewer();
+
+        }
+
+        if(e.key==="ArrowLeft"){
+
+            prevImage();
+
+        }
+
+        if(e.key==="ArrowRight"){
+
+            nextImage();
+
+        }
+
+    });
+
+    const viewerImage = document.getElementById("viewerImage");
+
+    viewerImage.addEventListener("touchstart", (e) => {
+
+        touchStartX = e.changedTouches[0].clientX;
+
+    });
+
+    viewerImage.addEventListener("touchend", (e) => {
+
+        touchEndX = e.changedTouches[0].clientX;
+
+        handleSwipe();
+
+    });
+
+}
+
+function handleSwipe(){
+
+    const distance = touchStartX - touchEndX;
+
+    // 너무 조금 움직인 건 무시
+    if(Math.abs(distance) < 50){
+        return;
+    }
+
+    if(distance > 0){
+
+        nextImage();
+
+    }else{
+
+        prevImage();
+
+    }
+
+}
+
+function closeViewer(){
+
+    document
+        .getElementById("viewer")
+        .classList.remove("active");
+
+}
+
+function prevImage(){
+
+    currentIndex--;
+
+    if(currentIndex<0){
+
+        currentIndex=CONFIG.gallery.length-1;
+
+    }
+
+    updateViewer();
+
+}
+
+function nextImage(){
+
+    currentIndex++;
+
+    if(currentIndex>=CONFIG.gallery.length){
+
+        currentIndex=0;
+
+    }
+
+    updateViewer();
+
+}
+
+function initMusic(){
+    
+    const audio = document.getElementById("bgm");
+
+    const btn = document.getElementById("musicBtn");
+
+    btn.addEventListener("click", async () => {
+
+        try{
+
+            if(musicPlaying){
+
+                audio.pause();
+
+                btn.innerHTML = "🔇";
+
+            }else{
+                await audio.play();
+                btn.innerHTML = "🎵";
+
+            }
+
+            musicPlaying = !musicPlaying;
+
+        }catch(e){
+            console.error(e);
+
+        }
+
+    });
+
+}
+
+function initKakao(){
+
+    if(!window.Kakao) return;
+
+    if(!Kakao.isInitialized()){
+
+        Kakao.init(CONFIG.kakao.javascriptKey);
+
+    }
+
+    document
+    .getElementById("shareBtn")
+    .addEventListener("click",shareKakao);
+
+}
+
+function shareKakao(){
+
+    Kakao.Share.sendDefault({
+
+        objectType:'feed',
+
+        content:{
+
+            title:CONFIG.share.title,
+
+            description:CONFIG.share.description,
+
+            imageUrl:CONFIG.site.url+"assets/images/dana.jpg",
+
+            link:{
+
+                mobileWebUrl:CONFIG.site.url,
+
+                webUrl:CONFIG.site.url
+
+            }
+
+        }
+
+    });
+
+}
+
+
+
+function formatCalendarDate(dateString){
+
+    const d = new Date(dateString);
+
+    const yyyy = d.getFullYear();
+
+    const MM = String(d.getMonth()+1).padStart(2,"0");
+
+    const dd = String(d.getDate()).padStart(2,"0");
+
+    const hh = String(d.getHours()).padStart(2,"0");
+
+    const mm = String(d.getMinutes()).padStart(2,"0");
+
+    return `${yyyy}${MM}${dd}T${hh}${mm}00`;
+
+}
+
+function downloadICS(){
+
+    const start = formatICSDate(CONFIG.eventDate);
+
+    const end = formatICSDate(CONFIG.eventEndDate);
+
+    const ics =
+        `BEGIN:VCALENDAR
+        VERSION:2.0
+        BEGIN:VEVENT
+        SUMMARY:${CONFIG.title}
+        DESCRIPTION:${CONFIG.invitation}
+        LOCATION:${CONFIG.address}
+        DTSTART:${start}
+        DTEND:${end}
+        END:VEVENT
+        END:VCALENDAR`;
+
+    const blob = new Blob([ics], {type:"text/calendar"});
+
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+
+    link.download = "DanaBirthday.ics";
+
+    link.click();
+
+}
+
+function formatICSDate(dateString){
+
+    const d = new Date(dateString);
+
+    const yyyy = d.getFullYear();
+
+    const MM = String(d.getMonth()+1).padStart(2,"0");
+
+    const dd = String(d.getDate()).padStart(2,"0");
+
+    const hh = String(d.getHours()).padStart(2,"0");
+
+    const mm = String(d.getMinutes()).padStart(2,"0");
+
+    return `${yyyy}${MM}${dd}T${hh}${mm}00`;
+
+}
+
+function bindLocation(){
+
+    document.getElementById("locationName").textContent =
+        CONFIG.location.name;
+
+    document.getElementById("locationAddress").textContent =
+        CONFIG.location.address;
+
+}
+
+function initMap(){
+    
+    const position = new kakao.maps.LatLng(
+
+        CONFIG.location.lat,
+
+        CONFIG.location.lng
+
+    );
+
+    const map = new kakao.maps.Map(
+
+        document.getElementById("map"),
+
+        {
+
+            center:position,
+
+            level:3
+
+        }
+
+    );
+
+    const marker = new kakao.maps.Marker({
+
+        position:position
+
+    });
+
+    marker.setMap(map);
+
+}
+
+function initNavigation(){
+
+    document
+        .getElementById("kakaoMapBtn")
+        .onclick=openKakaoMap;
+
+    document
+        .getElementById("naverMapBtn")
+        .onclick=openNaverMap;
+
+    document
+        .getElementById("tmapBtn")
+        .onclick=openTMap;
+
+}
+
+function openKakaoMap(){
+
+    const url =
+        `https://map.kakao.com/link/to/${
+            encodeURIComponent(CONFIG.location.name)
+        },${CONFIG.location.lat},${CONFIG.location.lng}`;
+
+    window.open(url);
+
+}
+
+function openNaverMap(){
+
+    const url =
+        `https://map.naver.com/v5/search/${
+            encodeURIComponent(CONFIG.location.address)
+        }`;
+
+    window.open(url);
+
+}
+
+function openTMap(){
+
+    const url =
+        `https://tmap.life/route?goalx=${CONFIG.location.lng}&goaly=${CONFIG.location.lat}&goalname=${encodeURIComponent(CONFIG.location.name)}`;
+
+    window.open(url);
+
+}
+
+async function submitAttendance() {
+
+    const name =
+        document.getElementById("attName").value.trim();
+
+    if (!name) {
+
+        alert("성함을 입력해주세요.");
+        return;
+
+    }
+
+    const data = {
+
+        name,
+
+        attend:
+            document.getElementById("attAttend").value,
+
+        people:
+            Number(document.getElementById("attPeople").value),
+
+        message:
+            document.getElementById("attMessage").value
+
+    };
+
+    const ok = await window.saveAttendance(data);
+
+    if (ok) {
+
+        alert("참석 여부가 전달되었습니다 😊");
+
+        document.getElementById("attName").value = "";
+        document.getElementById("attMessage").value = "";
+
+    } else {
+
+        alert("저장 실패");
+
+    }
+
+}
+
+function saveCalendar() {
+
+    const ua = navigator.userAgent.toLowerCase();
+
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+    const isAndroid = /android/.test(ua);
+
+    if (isAndroid) {
+
+        openGoogleCalendar();
+
+    } else {
+
+        downloadICS();
+
+    }
+
+}
+
+function openGoogleCalendar() {
+
+    const start = "20260815T030000Z";
+    const end = "20260815T060000Z";
+
+    const title = encodeURIComponent("다나 첫 돌잔치");
+
+    const details = encodeURIComponent(
+        "다나의 첫 번째 생일에 초대합니다."
+    );
+
+    const location = encodeURIComponent(
+        "경기도 광명시 일직로 43 리뉴아 GIDC C동 12층"
+    );
+
+    const url =
+        `https://calendar.google.com/calendar/render?action=TEMPLATE` +
+        `&text=${title}` +
+        `&dates=${start}/${end}` +
+        `&details=${details}` +
+        `&location=${location}`;
+
+    window.open(url, "_blank");
+
+}
+
+function downloadICS() {
+
+    const ics =
+`BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:다나 첫 돌잔치
+DTSTART:20260815T030000Z
+DTEND:20260815T060000Z
+LOCATION:경기도 광명시 일직로 43
+DESCRIPTION:다나의 첫 번째 생일에 초대합니다.
+END:VEVENT
+END:VCALENDAR`;
+
+    const blob = new Blob([ics], {
+        type: "text/calendar"
+    });
+
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+
+    a.href = url;
+    a.download = "DanaBirthday.ics";
+
+    a.click();
+
+    URL.revokeObjectURL(url);
 
 }

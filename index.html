@@ -9,13 +9,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=MaruBuri:wght@400;700&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
 
 </head>
 
 <body>
-
+<div id="progressBar"></div>
 <div class="container">
 
     <!-- Hero -->
@@ -135,56 +135,51 @@
 
         </div>
 
-        <button class="main-button">
 
-            캘린더 추가
-
+            
+        <button class="calendar-btn" onclick="saveCalendar()">
+            <span class="material-symbols-rounded">
+                event
+            </span>
+            일정 저장 하기
         </button>
 
+    
     </section>
 
 
 
     <!-- map -->
 
-    <section class="card">
+    <section class="location">
 
-        <h2>
+        <h2>오시는 길</h2>
 
-            오시는 길
+        <p id="locationName"></p>
 
-        </h2>
+        <p id="locationAddress"></p>
 
-        <div class="map">
+        <div id="map"></div>
 
-            지도 들어갈 자리
+        <div class="map-buttons">
 
-        </div>
-
-        <div class="button-group">
-
-            <button>
-
+            <button id="kakaoMapBtn">
                 카카오맵
-
             </button>
 
-            <button>
-
-                네이버
-
+            <button id="naverMapBtn">
+                네이버지도
             </button>
 
-            <button>
-
+            <button id="tmapBtn">
                 티맵
-
             </button>
 
         </div>
 
     </section>
 
+    
 
 
     <!-- gallery -->
@@ -207,39 +202,36 @@
 
     <section class="card">
 
-        <h2>
+        <h2>참석 여부</h2>
 
-            참석 여부
+        <input id="attName" placeholder="이름">
 
-        </h2>
+        <br>
 
-        <input
-            type="text"
-            placeholder="성함">
-
-        <select>
-
-            <option>
-
-                참석합니다
-
-            </option>
-
-            <option>
-
-                참석이 어렵습니다
-
-            </option>
-
+        <select id="attAttend">
+            <option value="참석">참석합니다</option>
+            <option value="불참">아쉽지만! 불참!</option>
         </select>
 
-        <input
+        <br>
+
+        <input id="attPeople"
             type="number"
-            placeholder="참석 인원">
+            value="1"
+            min="1">
 
-        <button class="main-button">
+    
 
-            참석하기
+        <textarea
+            id="attMessage"
+            placeholder="디나에게 한마디"></textarea>
+
+        <br>
+
+        <button class="main-button" onclick="submitAttendance()">       
+
+
+            전달하기
 
         </button>
 
@@ -259,10 +251,65 @@
 
 </div>
 
+<div id="viewer">
+
+    <div class="viewer-bg"></div>
+
+    <button id="prevBtn">&#10094;</button>
+
+    <img id="viewerImage">
+
+    <button id="nextBtn">&#10095;</button>
+
+    <button id="closeBtn">✕</button>
+
+    <div class="viewer-info">
+
+        <div id="viewerTitle"></div>
+
+        <div id="viewerDate"></div>
+
+        <div id="viewerDesc"></div>
+
+        <div id="viewerCount"></div>
+
+    </div>
+
+</div>
+
+
+<div class="floating-menu">
+
+    <button id="musicBtn" title="배경음악">
+
+        🔇
+
+    </button>
+
+    <button id="shareBtn">
+
+    공유
+
+    </button>
+
+</div>
+
+<audio id="bgm" loop>
+
+    <source src="music/bgm.mp3" type="audio/mpeg">
+
+</audio>
+
+
+<script type="module" src="firebase.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+
+<script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=e7031a4914d64fa4f55461ddff390b16&libraries=services"></script>
 <script src="config.js"></script>
 
 <script src="script.js"></script>
 
 </body>
+    
 
 </html>

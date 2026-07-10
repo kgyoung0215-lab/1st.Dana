@@ -1,5 +1,19 @@
 const CONFIG = {
 
+
+    kakao:{
+
+    javascriptKey:"e7031a4914d64fa4f55461ddff390b16"
+
+    },
+
+    site:{
+
+    url:"https://kgyoung0215-lab.github.io/1st.Dana/"
+
+    },
+
+
     /* ==========================
        기본 정보
     ========================== */
@@ -21,7 +35,11 @@ const CONFIG = {
 
     eventDate: "2026-08-09 11:00:00",
 
+    eventEndDate: "2026-08-09 14:00:00",
+
     dateText: "2026년 8월 9일 (일)",
+
+    
 
     timeText: "오전 11시 00분",
 
@@ -30,7 +48,21 @@ const CONFIG = {
     address: "경기도 광명시 일직로 43 C동 12층 1201호",
     parking: "주차 3시간 무료",
 
+    /* 장소
+    
+    */
 
+    location:{
+
+    name:"리누아 GIDC C동 12층",
+
+    address:"경기도 광명시 일직로 43",
+
+    lat:37.4227,
+
+    lng:126.8869
+
+    },
     /* ==========================
        연락처
     ========================== */
@@ -96,52 +128,53 @@ const CONFIG = {
 
     gallery:[
 
+
         
-        "assets/images/dana.jpg",
 
-        "assets/images/main.jpg",
+    {
+        image:"assets/images/dana.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
 
-        "assets/images/main.jpg",
+    {
+        image:"assets/images/main.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/dana.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
 
-        "assets/images/main.jpg",
+    {
+        image:"assets/images/main.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/dana.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
 
-        "assets/images/main.jpg",
+    {
+        image:"assets/images/main.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    }
 
-        "assets/images/main.jpg",
 
-        "assets/images/main.jpg"
 
     ],
 
-
-
-    /* ==========================
-       지도
-    ========================== */
-
-    map:{
-
-        lat:37.5665,
-
-        lng:126.9780
-
-    },
-
-
-
-    /* ==========================
-       길찾기
-    ========================== */
-
-    navigation:{
-
-        kakao:"",
-
-        naver:"",
-
-        tmap:""
-
-    },
 
 
 
@@ -260,4 +293,7 @@ const CONFIG = {
 
 ]
 
+
+
 };
+
