@@ -103,9 +103,13 @@ function updateCountdown(){
 
     const seconds=Math.floor(diff/1000%60);
 
+    // el.innerHTML=
+    //     `D-${days}<br>
+    //     <small>${hours}h ${minutes}m ${seconds}s</small>`;
+
     el.innerHTML=
-        `D-${days}<br>
-        <small>${hours}h ${minutes}m ${seconds}s</small>`;
+    `
+    ${days}일<span class="dday-text"> 남았습니다.</span>`;
 
 }
 
@@ -609,6 +613,7 @@ function initMap(){
 
 function initNavigation(){
 
+    const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
     document
         .getElementById("kakaoMapBtn")
         .onclick=openKakaoMap;
@@ -617,9 +622,15 @@ function initNavigation(){
         .getElementById("naverMapBtn")
         .onclick=openNaverMap;
 
-    document
-        .getElementById("tmapBtn")
-        .onclick=openTMap;
+
+    if (!isMobile) {
+        document.getElementById("tmapBtn").style.display = "none";
+    }else{
+        document
+            .getElementById("tmapBtn")
+            .onclick=openTMap;
+        }
+
 
 }
 
@@ -645,12 +656,56 @@ function openNaverMap(){
 
 }
 
-function openTMap(){
+function openTMap() {
 
-    const url =
-        `https://tmap.life/route?goalx=${CONFIG.location.lng}&goaly=${CONFIG.location.lat}&goalname=${encodeURIComponent(CONFIG.location.name)}`;
+    const ua = navigator.userAgent.toLowerCase();
 
-    window.open(url);
+    const isAndroid = /android/.test(ua);
+    const isIOS = /iphone|ipad|ipod/.test(ua);
+
+    let scheme = "";
+
+    if (isAndroid) {
+
+        scheme =
+            `tmap://route?goalx=${CONFIG.location.lng}` +
+            `&goaly=${CONFIG.location.lat}` +
+            `&goalname=${encodeURIComponent(CONFIG.location.name)}`;
+
+    } else if (isIOS) {
+
+        scheme =
+            `tmap://route?rGoX=${CONFIG.location.lng}` +
+            `&rGoY=${CONFIG.location.lat}` +
+            `&rGoName=${encodeURIComponent(CONFIG.location.name)}`;
+
+    } else {
+
+        // PC에서는 티맵 홈페이지
+        window.open("https://www.tmap.co.kr/", "_blank");
+        return;
+
+    }
+
+    // 앱 실행 시도
+    window.location.href = scheme;
+
+    // 앱이 없으면 스토어 이동
+    setTimeout(() => {
+
+        if (isAndroid) {
+
+            window.location.href =
+                "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
+
+        } else {
+
+            window.location.href =
+                "https://apps.apple.com/kr/app/tmap/id431589174";
+
+        }
+
+    }, 1200);
 
 }
 
@@ -705,13 +760,15 @@ function saveCalendar() {
     const isIOS = /iphone|ipad|ipod/.test(ua);
     const isAndroid = /android/.test(ua);
 
+     downloadICS();
+
     if (isAndroid) {
 
         openGoogleCalendar();
 
     } else {
 
-        downloadICS();
+       
 
     }
 

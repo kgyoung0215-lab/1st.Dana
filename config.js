@@ -24,9 +24,9 @@ const CONFIG = {
 
     englishName: "Dana",
 
-    subtitle: "First Birthday",
+    subtitle: "첫 번째 이야기",
 
-    quote: "Every day with you has been our greatest gift.",
+    quote: "우리의 소중한 첫 해, 함께 축하해주세요.",
 
 
     /* ==========================
@@ -37,7 +37,7 @@ const CONFIG = {
 
     eventEndDate: "2026-08-09 14:00:00",
 
-    dateText: "2026년 8월 9일 (일)",
+    dateText: "2026년 8월 9일 (일) 11시",
 
     
 
@@ -63,6 +63,7 @@ const CONFIG = {
     lng:126.8869
 
     },
+    
     /* ==========================
        연락처
     ========================== */
