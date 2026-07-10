@@ -244,24 +244,24 @@ const CONFIG = {
     timeline:[
 
     {
-        date:"2025.08.15",
+        date:"2025.08.09",
         title:"태어난 날 👶",
-        image:"assets/images/dana.jpg",
+        image:"assets/images/gallery_1.jpg",
         description:"우리 가족에게 가장 큰 선물이 찾아왔어요."
     },
 
     {
-        date:"2025.11.18",
+        date:"2025.11.13",
         title:"처음 뒤집었어요 🤍",
-        image:"assets/images/dana.jpg",
+        image:"assets/images/gallery_2.jpg",
         description:"혼자 뒤집기에 성공했어요."
     },
 
     {
-        date:"2026.01.05",
-        title:"배밀이를 시작했어요 🐣",
-        image:"assets/images/dana.jpg",
-        description:"세상을 탐험하기 시작했어요."
+        date:"2025.12.25",
+        title:"추운 겨울날 🐣",
+        image:"assets/images/gallery_3.jpg",
+        description:"크리스마스도 보냈구요."
     },
 
     {

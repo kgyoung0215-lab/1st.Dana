@@ -252,7 +252,7 @@ transform:translateY(0);
 
     font-size:30px;
 
-    margin-bottom:35px;
+    margin-bottom:15px;
 
 }
 
@@ -330,18 +330,20 @@ transform:translateY(0);
 
 .info div{
 
-    padding:22px;
 
     background:#faf8f5;
 
     border-radius:18px;
 
-    display:flex;
 
     align-items:center;
 
     gap:18px;
+    
+    text-align: center;
 
+    padding-top: 5px;
+    padding-right: 20px;
 }
 
 .info span{

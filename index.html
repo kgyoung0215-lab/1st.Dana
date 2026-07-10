@@ -22,7 +22,7 @@
 
     <section class="hero">
 
-        <img src="assets/images/dana.jpg" class="hero-image">
+        <img src="assets/images/title.png" class="hero-image">
 
         <div class="hero-text">
 
@@ -50,62 +50,61 @@
 
     </section>
 
+     <!-- map -->
 
+    <section class="location card">
 
-    <!-- invitation -->
+        <h2>잔치 안내</h2>
+        <p id="locationAddress"></p>
+        <p style="display:none;"id="locationName"></p>
+            <div class ="info">
 
-    <section class="card">
+                
 
-        <h2>
-            Invitation
-        </h2>
+                <div>
 
-        <p id="invitationText"></p>
+                <span>📍</span>
 
-    </section>
+                <strong id="scheduleHall"></strong>
 
+            </div>
 
+            </div>
+        
 
-    <!-- story -->
+        <div id="map"></div>
 
-    <section class="story">
+        <div class="map-buttons">
 
-        <img src="assets/images/dana.jpg">
+            <button id="kakaoMapBtn">
+                카카오맵
+            </button>
 
-        <div class="story-text">
+            <button id="naverMapBtn">
+                네이버지도
+            </button>
 
-            <h3>
-
-                Every Moment
-                was a Gift.
-
-            </h3>
-
-            <p id="storyText"></p>
+            <button id="tmapBtn">
+                티맵
+            </button>
 
         </div>
 
+        <button class="calendar-btn" onclick="saveCalendar()">
+            <span class="material-symbols-rounded">
+                event
+            </span>
+            일정 저장 하기
+        </button>
+
     </section>
-
-    <!-- Timeline -->
-
- <section class="timeline-section">
-
-    <h2>다나의 첫 번째 이야기</h2>
-
-    <div id="timeline"></div>
-
-</section>
-
-
-
     <!-- schedule -->
 
-    <section class="card">
+    <!-- <section class="card">
 
         <h2>
 
-            행사 안내
+            잔치 안내2
 
         </h2>
 
@@ -147,39 +146,61 @@
         </button>
 
     
-    </section>
+    </section> -->
+
+
+    <!-- invitation -->
+
+    <!-- <section class="card">
+
+        <h2>
+            Invitation
+        </h2>
+
+        <p id="invitationText"></p>
+
+    </section> -->
 
 
 
-    <!-- map -->
+    <!-- story -->
+<!-- 
+    <section class="story">
 
-    <section class="location">
+        <img src="assets/images/dana.jpg">
 
-        <h2>오시는 길</h2>
+        <div class="story-text">
 
-        <p id="locationName"></p>
+            <h3>
 
-        <p id="locationAddress"></p>
+                Every Moment
+                was a Gift.
 
-        <div id="map"></div>
+            </h3>
 
-        <div class="map-buttons">
-
-            <button id="kakaoMapBtn">
-                카카오맵
-            </button>
-
-            <button id="naverMapBtn">
-                네이버지도
-            </button>
-
-            <button id="tmapBtn">
-                티맵
-            </button>
+            <p id="storyText"></p>
 
         </div>
 
-    </section>
+    </section>  -->
+
+    <!-- Timeline -->
+
+ <section class="timeline-section">
+
+    <h2>다나의 첫 번째 이야기</h2>
+
+    <div id="timeline"></div>
+
+</section>
+
+
+
+    
+
+
+
+   
 
     
 
