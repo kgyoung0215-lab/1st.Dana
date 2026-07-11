@@ -170,6 +170,45 @@ const CONFIG = {
         title:"첫 걸음",
         date:"2026.04.01",
         description:"우리 가족의 첫 만남"
+    },
+     {
+        image:"assets/images/dana.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/main.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/dana.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/main.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/dana.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/main.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
     }
 
 

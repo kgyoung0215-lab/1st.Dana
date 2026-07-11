@@ -127,17 +127,36 @@ function makeGallery(){
 
     gallery.innerHTML = "";
 
+    const previewCount = 9; 
+
     CONFIG.gallery.forEach((item, index) => {
 
+        if(index >= previewCount) return;
+
+        // wrapper 생성
+        const wrapper = document.createElement("div");
+        wrapper.className = "gallery-item";
+
         const img = document.createElement("img");
-
         img.src = item.image;
-
         img.loading = "lazy";
 
-        img.onclick = () => openViewer(index);
+        wrapper.appendChild(img);
 
-        gallery.appendChild(img);
+        // 마지막 미리보기면 +N 표시
+        if(index === previewCount - 1 && CONFIG.gallery.length > previewCount){
+
+            const more = document.createElement("div");
+            more.className = "gallery-more";
+            more.textContent = `+${CONFIG.gallery.length - previewCount}`;
+
+            wrapper.appendChild(more);
+
+        }
+
+        wrapper.onclick = () => openViewer(index);
+
+        gallery.appendChild(wrapper);
 
     });
 

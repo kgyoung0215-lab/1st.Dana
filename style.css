@@ -492,6 +492,40 @@ transform:translateY(0);
 
 }
 
+.gallery-item{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+}
+
+.gallery-more{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    backdrop-filter:blur(2px);
+
+}
+
 .grid{
 
     columns: 3;
