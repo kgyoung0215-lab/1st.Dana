@@ -587,7 +587,7 @@ function initMap(){
     
     const position = new kakao.maps.LatLng(
 
-        CONFIG.location.lat,
+        CONFIG.location.lat - 0.0004,
 
         CONFIG.location.lng
 
@@ -601,7 +601,7 @@ function initMap(){
 
             center:position,
 
-            level:3
+            level:5
 
         }
 
