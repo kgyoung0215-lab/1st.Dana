@@ -123,97 +123,7 @@ const CONFIG = {
 
 
 
-    /* ==========================
-       갤러리
-    ========================== */
-
-    gallery:[
-
-
-        
-
-    {
-        image:"assets/images/dana.jpg",
-        title:"첫 뒤집기",
-        date:"2025.11.18",
-        description:"우리 가족의 첫 만남"
-    },
-
-    {
-        image:"assets/images/main.jpg",
-        title:"첫 걸음",
-        date:"2026.04.01",
-        description:"우리 가족의 첫 만남"
-    },
-    {
-        image:"assets/images/dana.jpg",
-        title:"첫 뒤집기",
-        date:"2025.11.18",
-        description:"우리 가족의 첫 만남"
-    },
-
-    {
-        image:"assets/images/main.jpg",
-        title:"첫 걸음",
-        date:"2026.04.01",
-        description:"우리 가족의 첫 만남"
-    },
-    {
-        image:"assets/images/dana.jpg",
-        title:"첫 뒤집기",
-        date:"2025.11.18",
-        description:"우리 가족의 첫 만남"
-    },
-
-    {
-        image:"assets/images/main.jpg",
-        title:"첫 걸음",
-        date:"2026.04.01",
-        description:"우리 가족의 첫 만남"
-    },
-     {
-        image:"assets/images/dana.jpg",
-        title:"첫 뒤집기",
-        date:"2025.11.18",
-        description:"우리 가족의 첫 만남"
-    },
-
-    {
-        image:"assets/images/main.jpg",
-        title:"첫 걸음",
-        date:"2026.04.01",
-        description:"우리 가족의 첫 만남"
-    },
-    {
-        image:"assets/images/dana.jpg",
-        title:"첫 뒤집기",
-        date:"2025.11.18",
-        description:"우리 가족의 첫 만남"
-    },
-
-    {
-        image:"assets/images/main.jpg",
-        title:"첫 걸음",
-        date:"2026.04.01",
-        description:"우리 가족의 첫 만남"
-    },
-    {
-        image:"assets/images/dana.jpg",
-        title:"첫 뒤집기",
-        date:"2025.11.18",
-        description:"우리 가족의 첫 만남"
-    },
-
-    {
-        image:"assets/images/main.jpg",
-        title:"첫 걸음",
-        date:"2026.04.01",
-        description:"우리 가족의 첫 만남"
-    }
-
-
-
-    ],
+    
 
 
 
@@ -228,7 +138,7 @@ const CONFIG = {
 
         description:"소중한 날 함께해주세요.",
 
-        image:"assets/images/dana.jpg"
+        image:"assets/images/gallery/1.jpg"
 
     },
 
@@ -340,8 +250,217 @@ const CONFIG = {
         description:"그리고 오늘."
     }
 
-]
+],
+/* ==========================
+       갤러리
+    ========================== */
 
+    gallery:[
+     
+
+    {
+        image:"assets/images/gallery/1.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/gallery/2.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/3.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/gallery/4.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/5.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/gallery/6.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+     {
+        image:"assets/images/gallery/7.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/gallery/8.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/9.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/gallery/10.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/11.jpg",
+        title:"첫 뒤집기",
+        date:"2025.11.18",
+        description:"우리 가족의 첫 만남"
+    },
+
+    {
+        image:"assets/images/gallery/12.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/13.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/14.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/15.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/16.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/17.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/18.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/19.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/20.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/21.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/22.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/23.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/24.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/25.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/26.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/27.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/28.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/29.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/30.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/31.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    },
+    {
+        image:"assets/images/gallery/32.jpg",
+        title:"첫 걸음",
+        date:"2026.04.01",
+        description:"우리 가족의 첫 만남"
+    }
+
+
+
+
+    ]
 
 
 };

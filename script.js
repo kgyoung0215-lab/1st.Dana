@@ -506,7 +506,7 @@ function shareKakao(){
 
             description:CONFIG.share.description,
 
-            imageUrl:CONFIG.site.url+"assets/images/dana.jpg",
+            imageUrl:CONFIG.site.url+"assets/images/title.jpg",
 
             link:{
 

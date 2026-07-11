@@ -546,6 +546,15 @@ transform:translateY(0);
 
     cursor:pointer;
 
+    object-fit:cover;
+
+    
+    aspect-ratio:1 / 1;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
 }
 
 .grid img:hover{
