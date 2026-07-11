@@ -43,7 +43,7 @@ const CONFIG = {
 
     timeText: "오전 11시 00분",
 
-    hall: "리누아 GIDC C동 12층",
+    hall: "GIDC C동 12층 리누아",
 
     address: "경기도 광명시 일직로 43 C동 12층 1201호",
     parking: "주차 3시간 무료",
@@ -246,49 +246,58 @@ const CONFIG = {
     {
         date:"2025.08.09",
         title:"태어난 날 👶",
-        image:"assets/images/gallery_1.jpg",
+        image:"assets/images/timeline_1.jpg",
         description:"우리 가족에게 가장 큰 선물이 찾아왔어요."
     },
 
     {
-        date:"2025.11.13",
-        title:"처음 뒤집었어요 🤍",
-        image:"assets/images/gallery_2.jpg",
-        description:"혼자 뒤집기에 성공했어요."
+        date:"2025.08月",
+        title:"처음 집에왔어요🤍",
+        image:"assets/images/timeline_2.jpg",
+        description:"찌니를 만나 인사했어요."
     },
 
     {
-        date:"2025.12.25",
-        title:"추운 겨울날 🐣",
-        image:"assets/images/gallery_3.jpg",
+        date:"2025.11月",
+        title:"뒤집기를 시작했어요 🐣",
+        image:"assets/images/timeline_3.jpg",
         description:"크리스마스도 보냈구요."
     },
 
     {
-        date:"2026.02.10",
-        title:"엄마를 말했어요 💕",
-        image:"assets/images/dana.jpg",
-        description:"처음 '엄마'를 불렀어요."
+        date:"2025.12月",
+        title:"추운 겨울날 🐣",
+        image:"assets/images/timeline_4.jpg",
+        description:"크리스마스도 보냈구요."
     },
 
     {
-        date:"2026.03.20",
-        title:"아빠를 말했어요 🥹",
-        image:"assets/images/dana.jpg",
-        description:"아빠가 제일 행복했던 날."
+        date:"2026.03月",
+        title:"어린이집도 가봤구요 💕",
+        image:"assets/images/timeline_5.jpg",
+        description:"친구들과 함께한 첫 사회 생활."
+    },
+
+        {
+        date:"2026.05月",
+        title:"비행기타고 바다도 보고✈️",
+        image:"assets/images/timeline_7.jpg",
+        description:"첨벙첨벙 한 걸음!"
     },
 
     {
-        date:"2026.04.01",
-        title:"첫 걸음을 떼었어요 👣",
-        image:"assets/images/dana.jpg",
-        description:"비틀비틀 한 걸음!"
+        date:"2026.06月",
+        title:"이제 혼자서도 잘해요 👣",
+        image:"assets/images/timeline_6.jpg",
+        description:" 0000  "
     },
+
+
 
     {
         date:"2026.08.09",
         title:"첫 번째 생일 🎂",
-        image:"assets/images/dana.jpg",
+        image:"assets/images/timeline_8.jpg",
         description:"그리고 오늘."
     }
 
