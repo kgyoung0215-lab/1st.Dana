@@ -238,27 +238,37 @@
 
         <h2>참석 여부</h2>
 
-        <input id="attName" placeholder="이름">
+        <input id="attName" placeholder="이름을 입력해주세요.">
 
         <br>
 
-        <select id="attAttend">
+        <select id="attAttend" onchange="togglePeople()">
             <option value="참석">참석합니다</option>
             <option value="불참">아쉽지만! 불참!</option>
         </select>
 
         <br>
 
-        <input id="attPeople"
-            type="number"
-            value="1"
-            min="1">
+        <div id="peopleWrap">
 
+        <label class="att-label">참석 인원</label>
+
+        <select id="attPeople">
+
+            <option value="1">1명</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명</option>
+            <option value="5">5명</option>
+
+        </select>
+
+        </div>
     
 
         <textarea
             id="attMessage"
-            placeholder="디나에게 한마디"></textarea>
+            placeholder="디나에게 한마디(선택)"></textarea>
 
         <br>
 

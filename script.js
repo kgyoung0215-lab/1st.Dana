@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     initMap();
 
     initNavigation();
+
+    togglePeople();
 });
 
 
@@ -735,7 +737,7 @@ async function submitAttendance() {
             document.getElementById("attAttend").value,
 
         people:
-            Number(document.getElementById("attPeople").value),
+            document.getElementById("attAttend").value ==="참석" ? Number(document.getElementById("attPeople").value) : 0,
 
         message:
             document.getElementById("attMessage").value
@@ -832,5 +834,14 @@ END:VCALENDAR`;
     a.click();
 
     URL.revokeObjectURL(url);
+
+}
+
+function togglePeople() {
+
+    const attend = document.getElementById("attAttend").value;
+    const peopleWrap = document.getElementById("peopleWrap");
+
+    peopleWrap.style.display = (attend === "참석") ? "block" : "none";
 
 }
