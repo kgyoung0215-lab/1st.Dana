@@ -496,28 +496,11 @@ function initKakao(){
 
 function shareKakao(){
 
-    Kakao.Share.sendDefault({
-
-        objectType:'feed',
-
-        content:{
-
-            title:CONFIG.share.title,
-
-            description:CONFIG.share.description,
-
-            imageUrl:CONFIG.site.url+CONFIG.share.image,
-
-            link:{
-
-                mobileWebUrl:CONFIG.site.url,
-
-                webUrl:CONFIG.site.url
-
-            }
-
-        }
-
+    Kakao.Share.sendCustom({
+    templateId: 135204,
+    templateArgs: {
+        title: "다나의 첫 번째 이야기"
+    }
     });
 
 }
