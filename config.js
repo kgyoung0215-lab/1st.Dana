@@ -247,7 +247,7 @@ const CONFIG = {
         date:"2025.08.09",
         title:"태어난 날 👶",
         image:"assets/images/timeline_1.jpg",
-        description:"우리 가족에게 가장 큰 선물이 찾아왔어요."
+        description:"우리 가족에게 다나가 찾아왔어요."
     },
 
     {
@@ -273,7 +273,7 @@ const CONFIG = {
 
     {
         date:"2026.03月",
-        title:"어린이집도 가봤구요 💕",
+        title:"어린이집도 가봤구요💕",
         image:"assets/images/timeline_5.jpg",
         description:"친구들과 함께한 첫 사회 생활."
     },

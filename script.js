@@ -213,6 +213,8 @@ function openViewer(index){
         .getElementById("viewer")
         .classList.add("active");
 
+    document.querySelector(".floating-menu").classList.add("hide");
+
 }
 
 function updateViewer(){
@@ -391,6 +393,8 @@ function closeViewer(){
     document
         .getElementById("viewer")
         .classList.remove("active");
+
+    document.querySelector(".floating-menu").classList.remove("hide");
 
 }
 
