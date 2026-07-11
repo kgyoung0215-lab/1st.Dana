@@ -241,16 +241,16 @@ const CONFIG = {
         date:"2026.06月",
         title:"이제 혼자서도 잘해요 👣",
         image:"assets/images/timeline_6.jpg",
-        description:" 0000  "
+        description:"이제 아장아장 걸을 준비 끝!"
     },
 
 
 
     {
         date:"2026.08.09",
-        title:"첫 번째 생일 🎂",
+        title:"첫 번째 생일 준비🎂",
         image:"assets/images/timeline_8.jpg",
-        description:"그리고 오늘."
+        description:"모두 감사해요."
     }
 
 ],
