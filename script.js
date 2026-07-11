@@ -257,9 +257,9 @@ function updateViewer(){
 
         img.src = item.image;
 
-        title.textContent = item.title || "";
+        //title.textContent = item.title || "";
 
-        date.textContent = item.date || "";
+        //date.textContent = item.date || "";
 
         desc.textContent = item.description || "";
 
