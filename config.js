@@ -134,9 +134,12 @@ const CONFIG = {
 
     share:{
 
-        title:"다나의 첫 번째 생일",
+        title:"🎂 다나의 첫 번째 이야기",
 
-        description:"소중한 날 함께해주세요.",
+        description:
+        `우리에게 찾아온 가장 큰 행복,
+         다나의 첫 번째 생일에
+         소중한 여러분을 초대합니다.`,
 
         image:"assets/images/title.png"
 
