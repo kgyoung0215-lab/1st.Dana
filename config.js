@@ -138,7 +138,7 @@ const CONFIG = {
 
         description:"소중한 날 함께해주세요.",
 
-        image:"assets/images/gallery/1.jpg"
+        image:"assets/images/title.png"
 
     },
 
