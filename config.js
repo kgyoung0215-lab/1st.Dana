@@ -222,7 +222,7 @@ const CONFIG = {
         date:"2025.11月",
         title:"뒤집기를 시작했어요 🐣",
         image:"assets/images/timeline_3.jpg",
-        description:"크리스마스도 보냈구요."
+        description:"꽤나 힘들었답니다."
     },
 
     {
