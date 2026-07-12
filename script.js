@@ -660,11 +660,12 @@ function openKakaoMap(){
 
 function openNaverMap(){
 
-    const url =
-        `https://map.naver.com/v5/search/${
-            encodeURIComponent(CONFIG.navi.naviName)
-        }`;
-    window.open(url);
+    // const url =
+    //     `https://map.naver.com/v5/search/${
+    //         encodeURIComponent(CONFIG.navi.naviName)
+    //     }`;
+    // window.open(url);
+    window.open("https://naver.me/FUifmO9w");
 
 
 
