@@ -410,6 +410,22 @@ transform:translateY(0);
 
 }
 
+.parking-guide{
+    text-align:center;
+    line-height:1.7;
+    color:#666;
+    font-size:14px;
+}
+
+.parking-guide strong{
+    font-size:18px;
+    color:#b98762;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+
+
 /* ===========================================
    MAP
 =========================================== */
@@ -424,7 +440,7 @@ transform:translateY(0);
 
     overflow:hidden;
 
-    margin:25px 0;
+    margin:2px 0 9px 0;
 
     background:#eee;
 

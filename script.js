@@ -54,6 +54,7 @@ function bindConfig(){
     setText("scheduleDate", CONFIG.dateText);
     setText("scheduleTime", CONFIG.timeText);
     setText("scheduleHall", CONFIG.hall);
+    setText("parkingInfo", CONFIG.parkingInfo);
 
 }
 
@@ -131,7 +132,7 @@ function makeGallery(){
 
     const previewCount = 9; 
 
-    CONFIG.gallery.forEach((item, index) => {
+    CONFIG.gallery1.forEach((description, index) => {
 
         if(index >= previewCount) return;
 
@@ -140,17 +141,18 @@ function makeGallery(){
         wrapper.className = "gallery-item";
 
         const img = document.createElement("img");
-        img.src = item.image;
+
+        img.src = `assets/images/gallery/${index + 1}.jpg`;
         img.loading = "lazy";
 
         wrapper.appendChild(img);
 
         // 마지막 미리보기면 +N 표시
-        if(index === previewCount - 1 && CONFIG.gallery.length > previewCount){
+        if(index === previewCount - 1 && CONFIG.gallery1.length > previewCount){
 
             const more = document.createElement("div");
             more.className = "gallery-more";
-            more.textContent = `+${CONFIG.gallery.length - previewCount}`;
+            more.textContent = `+${CONFIG.gallery1.length - previewCount}`;
 
             wrapper.appendChild(more);
 
@@ -240,7 +242,7 @@ function openViewer(index){
 
 function updateViewer(){
 
-    const item = CONFIG.gallery[currentIndex];
+    const item = CONFIG.gallery1[currentIndex];
 
     const img = document.getElementById("viewerImage");
 
@@ -257,15 +259,16 @@ function updateViewer(){
 
     setTimeout(() => {
 
-        img.src = item.image;
+        // img.src = item.image;
+        img.src = `assets/images/gallery/${currentIndex + 1}.jpg`;
 
         //title.textContent = item.title || "";
 
         //date.textContent = item.date || "";
 
-        desc.textContent = item.description || "";
+        desc.textContent = item || "";
 
-        count.textContent = `${currentIndex + 1} / ${CONFIG.gallery.length}`;
+        count.textContent = `${currentIndex + 1} / ${CONFIG.gallery1.length}`;
 
         // 이미지 로딩 후 페이드 인
         img.onload = () => {
@@ -425,7 +428,7 @@ function prevImage(){
 
     if(currentIndex<0){
 
-        currentIndex=CONFIG.gallery.length-1;
+        currentIndex=CONFIG.gallery1.length-1;
 
     }
 
@@ -437,7 +440,7 @@ function nextImage(){
 
     currentIndex++;
 
-    if(currentIndex>=CONFIG.gallery.length){
+    if(currentIndex>=CONFIG.gallery1.length){
 
         currentIndex=0;
 
@@ -582,6 +585,8 @@ function bindLocation(){
 
     document.getElementById("locationAddress").textContent =
         CONFIG.location.address;
+    document.getElementById("parkingGuide").innerHTML =
+        CONFIG.location.parking;
 
 }
 
@@ -698,22 +703,22 @@ function openTMap() {
     // 앱 실행 시도
     window.location.href = scheme;
 
-    // 앱이 없으면 스토어 이동
-    setTimeout(() => {
+    // // 앱이 없으면 스토어 이동
+    // setTimeout(() => {
 
-        if (isAndroid) {
+    //     if (isAndroid) {
 
-            window.location.href =
-                "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
+    //         window.location.href =
+    //             "https://play.google.com/store/apps/details?id=com.skt.tmap.ku";
 
-        } else {
+    //     } else {
 
-            window.location.href =
-                "https://apps.apple.com/kr/app/tmap/id431589174";
+    //         window.location.href =
+    //             "https://apps.apple.com/kr/app/tmap/id431589174";
 
-        }
+    //     }
 
-    }, 1200);
+    // }, 1200);
 
 }
 
