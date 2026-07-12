@@ -661,8 +661,9 @@ function openKakaoMap(){
 function openNaverMap(){
 
     const url =
-    `https://map.naver.com/v5/directions/-/-/${CONFIG.navi.lng},${CONFIG.navi.lat},${encodeURIComponent(CONFIG.location.name)},PLACE_POI/-/car`;
-
+        `https://map.naver.com/v5/search/${
+            encodeURIComponent(CONFIG.navi.naviName)
+        }`;
     window.open(url);
 
 

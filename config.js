@@ -68,8 +68,8 @@ const CONFIG = {
 
     navi:{
         lat:37.4230,
-
-        lng:126.8876
+        lng:126.8876,
+        naviName : "GIDC 광명역GATE2"
 
     },
     
