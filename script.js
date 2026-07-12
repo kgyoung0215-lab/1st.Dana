@@ -651,7 +651,7 @@ function openKakaoMap(){
 
     const url =
         `https://map.kakao.com/link/to/${
-            encodeURIComponent(CONFIG.location.name)
+            encodeURIComponent(CONFIG.location.naviName)
         },${CONFIG.location.lat},${CONFIG.location.lng}`;
 
     window.open(url);
@@ -662,7 +662,7 @@ function openNaverMap(){
 
     const url =
         `https://map.naver.com/v5/search/${
-            encodeURIComponent(CONFIG.location.address)
+            encodeURIComponent(CONFIG.location.naviName)
         }`;
 
     window.open(url);
@@ -683,14 +683,14 @@ function openTMap() {
         scheme =
             `tmap://route?goalx=${CONFIG.location.lng}` +
             `&goaly=${CONFIG.location.lat}` +
-            `&goalname=${encodeURIComponent(CONFIG.location.name)}`;
+            `&goalname=${encodeURIComponent(CONFIG.location.naviName)}`;
 
     } else if (isIOS) {
 
         scheme =
             `tmap://route?rGoX=${CONFIG.location.lng}` +
             `&rGoY=${CONFIG.location.lat}` +
-            `&rGoName=${encodeURIComponent(CONFIG.location.name)}`;
+            `&rGoName=${encodeURIComponent(CONFIG.location.naviName)}`;
 
     } else {
 

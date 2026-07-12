@@ -56,6 +56,8 @@ const CONFIG = {
 
     name:"리누아 GIDC C동 12층",
 
+    naviName : "GIDC 광명역 GATE2",
+
     address:"경기도 광명시 일직로 43",
 
     parking:"<b>🚗주차안내 : </b><strong>2번 게이트</strong>로 오세요.(C동 바로 연결)",
