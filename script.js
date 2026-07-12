@@ -651,8 +651,8 @@ function openKakaoMap(){
 
     const url =
         `https://map.kakao.com/link/to/${
-            encodeURIComponent(CONFIG.location.naviName)
-        },${CONFIG.location.lat},${CONFIG.location.lng}`;
+            encodeURIComponent(CONFIG.location.name)
+        },${CONFIG.navi.lat},${CONFIG.navi.lng}`;
 
     window.open(url);
 
@@ -661,12 +661,14 @@ function openKakaoMap(){
 function openNaverMap(){
 
     const url =
-        `https://map.naver.com/v5/search/${
-            encodeURIComponent(CONFIG.location.naviName)
-        }`;
+    `https://map.naver.com/v5/directions/-/-/${CONFIG.navi.lng},${CONFIG.navi.lat},${encodeURIComponent(CONFIG.location.name)},PLACE_POI/-/car`;
 
     window.open(url);
 
+
+
+
+window.open(url);
 }
 
 function openTMap() {
@@ -681,16 +683,16 @@ function openTMap() {
     if (isAndroid) {
 
         scheme =
-            `tmap://route?goalx=${CONFIG.location.lng}` +
-            `&goaly=${CONFIG.location.lat}` +
-            `&goalname=${encodeURIComponent(CONFIG.location.naviName)}`;
+            `tmap://route?goalx=${CONFIG.navi.lng}` +
+            `&goaly=${CONFIG.navi.lat}` +
+            `&goalname=${encodeURIComponent(CONFIG.location.name)}`;
 
     } else if (isIOS) {
 
         scheme =
-            `tmap://route?rGoX=${CONFIG.location.lng}` +
-            `&rGoY=${CONFIG.location.lat}` +
-            `&rGoName=${encodeURIComponent(CONFIG.location.naviName)}`;
+            `tmap://route?rGoX=${CONFIG.navi.lng}` +
+            `&rGoY=${CONFIG.navi.lat}` +
+            `&rGoName=${encodeURIComponent(CONFIG.location.name)}`;
 
     } else {
 
